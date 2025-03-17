@@ -22,6 +22,7 @@ router.post('/sign', async (req, res) => {
         res.json({ result: true, username });
         await connection.end();
     } catch (error) {
+        console.log(error);
         res.status(500).json({ result: false, message: '注册失败' });
     }
 });
